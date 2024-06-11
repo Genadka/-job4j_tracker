@@ -17,6 +17,7 @@ public class Student {
         Student vasya = new Student();
         Student petya = new Student();
         vasya.drumm();
+        vasya.drumm();
         petya.music();
         petya.music();
         petya.music();
