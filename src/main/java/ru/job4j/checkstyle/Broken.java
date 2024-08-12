@@ -5,7 +5,7 @@ public class Broken {
     private String name;
     private String surName;
 
-    Broken() { }
+    public Broken() { }
 
     public void echo() { }
 
