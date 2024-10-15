@@ -14,18 +14,18 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        if (items[0] != null) {
-            return Arrays.copyOf(items, size);
-        }
-        return items;
+        return Arrays.copyOf(items, size);
     }
 
     public Item[] findByName(String key) {
-        Item[] result = new Item[items.length];
+        Item[] result = new Item[size];
         int count = 0;
 
         for (Item item : items) {
-            if (item != null && item.getName().equals(key)) {  //все же нужна проверка на null?
+            if (item == null) {
+                break;
+            }
+            if (item.getName().equals(key)) {
                 result[count] = item;
                 count++;
             }
@@ -34,14 +34,11 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-        Item rsl = null;
         for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
-                break;
+            if (items[index].getId() == id) {
+                return items[index];
             }
         }
-        return rsl;
+        return null;
     }
 }
