@@ -25,7 +25,7 @@ public class Tracker {
         int count = 0;
 
         for (Item item : items) {
-            if (item != null && item.getName().equals(key)) {
+            if (item.getName().equals(key)) {
                 result[count] = item;
                 count++;
             }
