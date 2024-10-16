@@ -21,10 +21,8 @@ public class Tracker {
         Item[] result = new Item[size];
         int count = 0;
 
-        for (Item item : items) {
-            if (item == null) {
-                break;
-            }
+        for (int i = 0; i < size; i++) {
+            Item item = items[i];
             if (item.getName().equals(key)) {
                 result[count] = item;
                 count++;
