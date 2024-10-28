@@ -32,7 +32,15 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item item) {
-        int index = indexOf(id);
+        if (id <= 0) {
+            System.out.println("Недопустимый id: " + id);
+            return false;
+        }
+        if (item == null) {
+            System.out.println("Пустой элемент");
+            return false;
+        }
+        int index = this.indexOf(id);
         if (index != -1) {
             item.setId(id);
             items[index] = item;
@@ -42,6 +50,9 @@ public class Tracker {
     }
 
     public void delete(int id) {
+        if (id <= 0) {
+            System.out.println("Недопустимый id: " + id);
+        }
         int index = this.indexOf(id);
         if (index != -1) {
             int length = this.size - index - 1;
