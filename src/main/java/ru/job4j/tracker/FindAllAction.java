@@ -1,6 +1,9 @@
 package ru.job4j.tracker;
 
 public class FindAllAction implements UserAction {
+    public FindAllAction(Output output) {
+    }
+
     @Override
     public String name() {
         return "Вывод всех заявок";

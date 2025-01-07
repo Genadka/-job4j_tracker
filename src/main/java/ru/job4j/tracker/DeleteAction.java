@@ -1,6 +1,9 @@
 package ru.job4j.tracker;
 
 public class DeleteAction implements UserAction {
+    public DeleteAction(Output output) {
+    }
+
     @Override
     public String name() {
         return "Удалить заявку";
