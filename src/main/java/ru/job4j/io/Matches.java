@@ -11,23 +11,14 @@ public class Matches {
         while (count > 0) {
             String player = turn ? "Первый игрок" : "Второй игрок";
             System.out.println(player + " введите число от 1 до 3:");
-            int matches = 0;
-            if (input.hasNextInt()) {
-                matches = input.nextInt();
-                if (matches > 0 && matches < 4) {
-                    if (count >= matches) {
-                        count -= matches;
-                        turn = !turn;
-                    } else {
-                        System.out.println("введите меньшее число, чем осталось спичек: " + count);
-                    }
-                } else {
-                    System.out.println("введите число от 1 до 3");
-                }
+            int matches = Integer.parseInt(input.nextLine());
+            if (matches > 0 && matches <= Math.min(count, 3)) {
+                count -= matches;
+                turn = !turn;
             } else {
-                System.out.println("введите целое число");
-                input.next();
+                System.out.println("введите число от 1 до " + Math.min(count, 3));
             }
+            System.out.println("На столе осталось спичек: " + count);
         }
         input.close();
         if (!turn) {
